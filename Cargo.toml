@@ -8,10 +8,8 @@ edition = "2018"
 
 [dependencies]
 
-# acvm = { path = "../acvm" }
 acvm = { git = "https://github.com/noir-lang/noir" }
-# arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend" }
-arkworks_backend = { path = "../arkworks_backend" }
+arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", branch = "configure-marlin" }
 
 sha2 = "0.9.3"
 blake2 = "0.9.1"
