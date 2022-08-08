@@ -26,7 +26,6 @@ impl PartialWitnessGenerator for Marlin {
         let mut unsolved_gates: Vec<Gate> = Vec::new();
 
         for gate in gates.into_iter() {
-            println!("gate: {:?}", gate);
             let unsolved = match &gate {
                 Gate::Arithmetic(arith) => {
                     ArithmeticSolver::solve(initial_witness, &arith).is_some()
