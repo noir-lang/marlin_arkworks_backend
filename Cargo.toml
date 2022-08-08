@@ -8,8 +8,10 @@ edition = "2018"
 
 [dependencies]
 
-acvm = { git = "https://github.com/noir-lang/noir" }
+acvm = { git = "https://github.com/noir-lang/noir", branch = "configure-marlin" }
+# acvm = { path = "../../noir/crates/acvm" }
 arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", branch = "configure-marlin" }
+# arkworks_backend = { path = "../arkworks_backend" }
 
 sha2 = "0.9.3"
 blake2 = "0.9.1"
@@ -27,3 +29,8 @@ num-traits = "0.2.8"
 
 [dev-dependencies]
 tempfile = "3.2.0"
+
+[features]
+# default = ["bls12_381"] # not specifying a default gives an error that "extern location for acvm does not exist" within `acvm_interop`, but it still builds when specifying `marlin_arkworks_backend/[field name]` in the Cargo.toml inside the nargo crate
+bn254 = ["arkworks_backend/bn254"]
+bls12_381 = ["arkworks_backend/bls12_381"]
