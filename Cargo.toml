@@ -8,8 +8,8 @@ edition = "2018"
 
 [dependencies]
 
-acvm = { git = "https://github.com/noir-lang/noir", branch = "configure-marlin" } # These both can be updated to the main branch once the PR updating the acvm features is merged into master
-arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", branch = "configure-marlin" }
+acvm = { git = "https://github.com/noir-lang/noir" } 
+arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend" }
 
 sha2 = "0.9.3"
 blake2 = "0.9.1"
