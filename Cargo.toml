@@ -8,8 +8,8 @@ edition = "2018"
 
 [dependencies]
 
-acvm = { git = "https://github.com/noir-lang/noir" } 
-arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend" }
+acvm = { git = "https://github.com/noir-lang/noir", branch = "refactor-pwg" } 
+arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", branch = "refactor-pwg" }
 
 sha2 = "0.9.3"
 blake2 = "0.9.1"
@@ -30,7 +30,8 @@ tempfile = "3.2.0"
 
 [features]
 # not specifying a default sometimes gives an error that "extern location for acvm does not exist" on some imports locally, 
-# but it still builds when specifying `marlin_arkworks_backend/[field name]` in the Cargo.toml inside the nargo crate, uncomment to remove extern location errors 
+# but it still builds when specifying `marlin_arkworks_backend/[field name]` in the Cargo.toml inside the nargo crate
+# uncomment the default line to remove extern location errors, it is most likely a coloring error
 # default = ["bls12_381"] 
 bn254 = ["arkworks_backend/bn254"]
 bls12_381 = ["arkworks_backend/bls12_381"]
