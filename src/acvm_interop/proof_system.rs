@@ -1,12 +1,19 @@
 use std::collections::BTreeMap;
 
-use acvm::{Language, ProofSystemCompiler};
-use acvm::acir::{circuit::Circuit, native_types::Witness};
-use acvm::FieldElement;
+use acvm::acir::{circuit::Circuit, native_types::Witness, BlackBoxFunc};
+use acvm::{FieldElement, Language, ProofSystemCompiler};
 
 use super::Marlin;
 
 impl ProofSystemCompiler for Marlin {
+    fn get_exact_circuit_size(&self, _: Circuit) -> u32 {
+        todo!()
+    }
+
+    fn blackbox_function_supported(&self, _: &BlackBoxFunc) -> bool {
+        false
+    }
+
     fn prove_with_meta(
         &self,
         circuit: Circuit,
