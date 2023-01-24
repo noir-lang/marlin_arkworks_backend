@@ -8,13 +8,13 @@ edition = "2018"
 
 [dependencies]
 
-acvm = { git = "https://github.com/noir-lang/noir", rev = "cc5ee63072e09779bebd7e7dd054ae16be307d7f" } 
-arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", rev = "ee6d468f5cc635dc2589965b6bf16cd2a839d7d3" }
+acvm = "0.3.1"
+arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", rev = "2f3f0db182004d5c01008c741bf519fe6798e24d" }
 
 [features]
-# not specifying a default sometimes gives an error that "extern location for acvm does not exist" on some imports locally, 
+# not specifying a default sometimes gives an error that "extern location for acvm does not exist" on some imports locally,
 # but it still builds when specifying `marlin_arkworks_backend/[field name]` in the Cargo.toml inside the nargo crate
 # uncomment the default line to remove extern location errors, it is most likely a coloring error
-# default = ["bls12_381"] 
+# default = ["bls12_381"]
 bn254 = ["arkworks_backend/bn254"]
 bls12_381 = ["arkworks_backend/bls12_381"]
