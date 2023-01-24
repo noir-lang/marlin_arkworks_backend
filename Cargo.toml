@@ -11,23 +11,6 @@ edition = "2018"
 acvm = { git = "https://github.com/noir-lang/noir", rev = "cc5ee63072e09779bebd7e7dd054ae16be307d7f" } 
 arkworks_backend = { git = "https://github.com/noir-lang/arkworks_backend", rev = "ee6d468f5cc635dc2589965b6bf16cd2a839d7d3" }
 
-sha2 = "0.9.3"
-blake2 = "0.9.1"
-sled = "0.34.6"
-
-dirs = "3.0"
-downloader = "0.2.6"
-
-indicatif = "0.15.0"
-regex = "1.4.0"
-once_cell = "1.5.2"
-
-num-bigint = "0.4"
-num-traits = "0.2.8"
-
-[dev-dependencies]
-tempfile = "3.2.0"
-
 [features]
 # not specifying a default sometimes gives an error that "extern location for acvm does not exist" on some imports locally, 
 # but it still builds when specifying `marlin_arkworks_backend/[field name]` in the Cargo.toml inside the nargo crate
